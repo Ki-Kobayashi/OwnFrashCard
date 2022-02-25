@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My単語帳</string>
+
+<!--説明文-->
+    <string name="change_bg_color">画面の背景色を選んでください。</string>
+    <string name="title_registered_word_list">登録済みの単語一覧</string>
+    <string name="title_edit_page_description">問題と答えを入力してください。</string>
+    <string name="title_add_new_word">新しい単語の追加</string>
+    <string name="title_edit_word">登録済み単語の編集</string>
+<!-- ボタン-->
+    <string name="btn_add_new_word">単語を追加</string>
+    <string name="btn_back">もどる</string>
+    <string name="btn_register">登録</string>
+<!-- ラベル-->
+    <string name="label_question">問題</string>
+    <string name="label_answer">こたえ</string>
+
+<!--ContentDescription-->
+<!-- ボタン-->
+    <string name="cd_edit_word_button">単語の編集ボタン</string>
+    <string name="cd_test_word_button">単語テストボタン</string>
+
+<!--背景色選択-->
+    <string name="cd_bg_dark">背景ダーク</string>
+    <string name="cd_bg_darkbule">背景ダークブルー</string>
+    <string name="cd_bg_white">背景ホワイト</string>
+    <string name="cd_bg_pink">背景ピンク</string>
+    <string name="cd_bg_green">背景グリーン</string>
+    <string name="cd_bg_yellow">背景イエロー</string>
+</resources>
