@@ -7,15 +7,14 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+var bgColorCode = 0
+
 class MainActivity : AppCompatActivity(), View.OnClickListener {
         private val TAG = this::class.java.simpleName
-        private var mBgColorCode = 0
-
 
         override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_main)
-
         }
 
         override fun onResume() {
@@ -57,16 +56,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         override fun onClick(v: View) {
 //                TODO:背景色を変える処理
                 val  btn = v as Button
-                var intBgColor = 0
+//                var intBgColor = 0
                 when (btn) {
-                        buttonBgDarkBlue -> intBgColor = R.color.bg_blue
-                        buttonBgDark -> intBgColor = R.color.bg_dark
-                        buttonBgWhite -> intBgColor = R.color.bg_white
-                        buttonBgPink -> intBgColor = R.color.bg_pink
-                        buttonBgGreen -> intBgColor = R.color.bg_green
-                        buttonBgYellow -> intBgColor = R.color.bg_yellow
+                        buttonBgDarkBlue -> bgColorCode = R.color.bg_blue
+                        buttonBgDark -> bgColorCode = R.color.bg_dark
+                        buttonBgWhite -> bgColorCode = R.color.bg_white
+                        buttonBgPink -> bgColorCode = R.color.bg_pink
+                        buttonBgGreen -> bgColorCode = R.color.bg_green
+                        buttonBgYellow -> bgColorCode = R.color.bg_yellow
                 }
-                ConstraintLayoutMain.setBackgroundResource(intBgColor)
+                ConstraintLayoutMain.setBackgroundResource(bgColorCode)
 //                mBgColorCode = p0.background.
         }
 }
