@@ -15,6 +15,7 @@ class EditActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_edit)
 
                 initView()
+<<<<<<< HEAD
         }
 
         override fun onResume() {
@@ -25,6 +26,18 @@ class EditActivity : AppCompatActivity() {
                 super.onPause()
         }
 
+=======
+        }
+
+        override fun onResume() {
+                super.onResume()
+        }
+
+        override fun onPause() {
+                super.onPause()
+        }
+
+>>>>>>> develop
         private fun initView() {
                 ConstraintLayoutEdit.setBackgroundResource(bgColorCode)
 
@@ -42,11 +55,19 @@ class EditActivity : AppCompatActivity() {
         }
 
         private fun changeWord() {
+<<<<<<< HEAD
 
         }
 
         private fun addNewWord() {
 
+=======
+                TODO("Not yet implemented")
+        }
+
+        private fun addNewWord() {
+                TODO("Not yet implemented")
+>>>>>>> develop
         }
 
 
