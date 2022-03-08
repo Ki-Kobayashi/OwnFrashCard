@@ -1,7 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-android-extensions'
+//    id 'kotlin-android-extensions'// 非推奨
+    //    ★以下のいずれかをひとつを選択（kspの方が上位バージョン）
+    id 'kotlin-kapt'// kapt（コンパイラ）を使うために必須。
+//    id 'dagger.hilt.android.plugin'// 使えない・・・（なぜ？）
+    // id "com.google.devtools.ksp"// ksp（コンパイラ）を使うために必須使えない・・・（なぜ？）
 }
 
 android {
@@ -30,10 +34,40 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
+}
+
+ext {
+    roomVersion = "2.4.2"
 }
 
 dependencies {
+// ---------------【Room】--------------
+    //    https://somachob.com/android-room/（★日本語使い方）
+    //    val roomVersion = "2.4.2"
 
+    implementation("androidx.room:room-runtime:$roomVersion")
+    // コンパイラは以下の3つからいずれかを選ぶ（Room利用のため）
+    // ①★Javaの場合は以下
+    //    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+
+    // ②★従来 ➡ Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$roomVersion")
+
+    // ③★Kaptの上位版（速い） ➡ Kotlin Symbolic Processing (KSP)
+    //    https://android-developers-jp.googleblog.com/2021/09/accelerated-kotlin-build-times-with.html
+    //    ksp("androidx.room:room-compiler:$roomVersion")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomVersion")
+// ---------------【/ Room】--------------
+
+//    compileOnly 'io.realm.kotlin:library-base:0.9.0'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
